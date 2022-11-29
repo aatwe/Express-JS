@@ -1,0 +1,61 @@
+How do we do calculation at server? by getting data from form + parse http request
+	How to get form data (network->console -> form data) ? Body parser NPM package
+		app.use(bodyParser.urlencoded({extended: true})		//we use this //how to grab data posted to server
+
+Why use body parser(req.body.num1)? parse http request 
+		how are num1 and num2 parsed? as text // convert to number
+
+Why use urlencoded? get access to form data
+________________________________________________________________
+npm package
+body parser
+
+.> npm install body-parser
+	//check dependencies
+
+Use dependency
+_________________________________________________________________
+Calculator.js
+
+
+
+const express = require("expresss");
+ww
++		//add body parser
+const app = express();
+
+						//use body parser
+//app.use(bodyParser.text())
+//app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true})));		//we use this //how to grab data posted to server
+
+app.get("/", function(req,res){
+  res.sendFile(__dirname + "index.html");	//get file path of current directory folder
+})
+
+app.post("/", function(req, res){		//POST Callback function
+  res.send("Thanks for posting that)
+})
+
+console.log(req.body);			// logs all form data from http request to terminal(server)
+console.log(req.body.num1);					//Use form data like properties
+
+					//Now we have form data perform business logic on calculator
+var num1 = Number(req.body.num1);
+var num2 = Number(req.body.num2);
+
+var result = num1 + num2;
+
+res.send("The result of calculation is" +result);
+
+app.listen(3000, function(){
+  console.log("Server is runningon port 3000");
+})
+
+//browser:
+4   5    Calculate
+
+//Terminal Server.js
+server is running on port 3000
+{num1: '4', num2: '5', submit: ''}
+9

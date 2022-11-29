@@ -1,0 +1,94 @@
+1)
+
+2   3   calculate
+
+Click calculate->
+error:
+	Cannot POST /index.html  	//where this message comes from? form
+					<form action="index.html" method="post">
+						form has post method -> What post means? data is sent
+						Where data sent? index.html
+						How is is sent?POST
+
+
+Chrome-> Developer tools -> Network -> Select All
+
+
+
+//Check network
+
+//list of networking requests logged
+index.html has 404 error
+
+__________________________________________________________________________________________________________________________________
+
+
+2) How to send data to server(server.js) instead of index.html
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <<link rel="stylesheet" href="/css/styles.css">>
+  </head>
+  <body>
+	<h1>Calculator</h1>
+						//Create a form
+	<form action="/" method="post">			//Send home route
+						//Add a input
+		<form action="index.html" method="post">
+		  <input type="text" name="num1" placeholder= "First Number">		//placeholder= text visible when empty text box
+		  <input type="text" name="num2" placeholder= "Second Number">	
+		  <button type="submit" name="submit"> Calculate </button>
+	</form>
+  </body>
+</html>
+
+Output:
+Still cant post
+
+Network->
+Status code: 404 not found 	//What is 404? HTTP Status Codes
+				100s: Hold on something will happen
+				200s: Here you go(successfull)
+				300s Go Away security here
+				400s Your mistake
+				500s His mistake
+Check form data in network
+	num1 : 2
+	num2 : 3
+
+
+Why our server can process POST requests? Does not know how to
+					Not accepting post requests
+
+How to teach to process POST Request? use post method with callback
+
+
+const express = require("expresss");
+const app = express();
+
+app.get("/", function(req,res){
+  res.sendFile(__dirname + "index.html");	//get file path of current directory folder
+})
+
+app.post("/", function(req, res){		//POST Callback function
+  res.send("Thanks for posting that)
+})
+
+app.listen(3000, function(){
+  console.log("Server is runningon port 3000");
+})
+
+IMPLEMENT in browser
+
+ 2   3   Calculate
+Thanks for posting that
+
+Check network->
+	local host : status : 200
+		-> Form data
+
+		..How to get form data into callback function to get to server

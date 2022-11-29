@@ -1,0 +1,48 @@
+Where are we creating server?locally 
+How? using nod ejs and express
+
+
+1) Create express server project directory
+
+2) Create a file server.js
+
+3) npm init	//initialize npm	//nodepackages
+
+4)set up with details/package information
+	package.json will be created
+
+5)in same project directory
+	atom .	//Add project folder to atom
+
+
+
+6) set entry point
+	entry point: (index.js)
+
+
+7) Install express
+	npm install express --save	//Add express to package.json dependencies (--save optional in future node versions)
+				//also instlal depending node modules express needs
+
+8) how to use express
+	//jshint esversion:6
+		const express = reuire('express');	
+	//bind express function to app constant 
+		const app = express()
+	//Listen to app on port 3000		//What is port? channel
+		app.listen(3000)		//Our first server is built
+
+8) How to run express server
+	node server.js
+	//no prompt
+	
+	//How to stop server? ctrl  + c
+
+9) //How to check if server is running? callback a console.log
+	app.listen(3000, function(){
+		console.log("Server started on port 3000");
+})
+
+10) How to check port 3000?
+	localhost:3000 on browser
+	Error -> Cannot GET / 		//Browser cannot get anything back when contacting server

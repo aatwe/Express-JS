@@ -1,0 +1,37 @@
+0) Why use routes? advantage of routes?
+	to have different pages without separate html
+
+	website can hav elots of different pages
+	no need to create separate index.html contact.html
+	
+
+1) What are routes?
+How get request finds server? route  (location("/")) 
+
+
+const express = require("express");
+const app = express();
+
+Page conditionals using route. respond  X if visiting page A, respond Y if visiting page B
+1) How to target home route
+
+app.get("/", function(req, res)) {				What is "/"? is the route we respond to
+	res.send("<h1>Hello World <h1>);
+});
+
+2) How to target another route(contact route)
+app.get("/contact", function(req, res)) {				What is "/"? is the route we respond to
+	res.send("Contact me at abhi.atwe@gmail.com");
+});
+
+app.listen(3000, function(){
+  console.log("server started  on port 3000");
+	});
+
+
+2) How too access routes?
+localhost:3000/      //homepage route
+Hello World
+
+localhost:3000/contact  //contact route
+Contact me at abhi.atwe@gmail.com

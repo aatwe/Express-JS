@@ -1,0 +1,14 @@
+Browser:
+view page source:
+All client sees is plane and simple html website
+No JS Code is visible
+
+
+Server.js
+
+	Has all the JScode
+	backend is doing code exceution  of JS
+
+
+
+Web application created (code is running on backend)

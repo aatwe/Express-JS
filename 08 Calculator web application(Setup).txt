@@ -1,0 +1,23 @@
+1) create calc directory
+	mkdir calculator
+	cd calculator
+	touch calculator.js
+	npm init
+	Enter information
+	atom .
+	npm install express
+
+	
+calculator.js
+	//jshint esversion:6
+//use express
+	const express = require("express")
+	const app = express();
+//define route
+	app.get("/", function(req, res){
+		res.send("Hello World")	
+//listen server
+	app.listen(3000, function() {
+  console.log("Server is running port 3000"); 
+})
+})

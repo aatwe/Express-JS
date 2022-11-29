@@ -1,0 +1,8 @@
+we made static websites: 
+	a) browser requests server, server sends back html,css,js
+	b) JS code runs on client side(browser)
+
+
+
+	a) website makes request to server,server executes code and deliver outcome
+	b) run code server side

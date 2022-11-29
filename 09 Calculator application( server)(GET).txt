@@ -1,0 +1,78 @@
+1) create index.html
+	touch index.html
+
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <<link rel="stylesheet" href="/css/styles.css">>
+  </head>
+  <body>
+	<h1>Calculator</h1>
+						//Create a form
+	<form action="index.html" method="post">
+						//Add a input
+		<form action="index.html" method="post">
+		  <input type="text" name="num1" placeholder= "First Number">		//placeholder= text visible when empty text box
+		  <input type="text" name="num2" placeholder= "Second Number">	
+		  <button type="submit" name="submit"> Calculate </button>
+	</form>
+  </body>
+</html>
+
+2) Send index.html to browser when home route is accessed
+How to send information to browser? send()
+How to send entire webpage back to browser?
+	Express -> API Reference -> Response
+				res.send
+				res.sendFile(path[, options][, fn]) \
+
+a) Send files form our computer server (if know path)
+calculator.js
+
+const express = require("expresss");
+const app = express();
+
+app.get("/", function(req,res){
+  res.sendFile("index.html")
+})
+
+app.listen(3000, function(){
+  console.log("Server is runningon port 3000");
+})
+
+b) Send files from Other computer server( if dontknow path)
+What if server is in cloud/Other computer?how to send files then?
+if dontknow location, use __dirname to get file path of current file  no matter wherever it is hosted (cloud/othercomputer/remoteserver)
+
+
+const express = require("expresss");
+const app = express();
+
+app.get("/", function(req,res){
+  res.sendFile(__dirname + "index.html");	//get file path of current directory folder
+  console.log("__dirname ")
+})
+app.listen(3000, function(){
+  console.log("Server is runningon port 3000");
+})
+
+
+//RUN
+load localhost:3000/
+
+
+3) How __dirname works?
+Dont have to know where file resides on any server
+
+a) create path.js in Calculator folder 
+	console.log(__dirname);
+
+b) terminal : node path.js
+	// returns  /Usersangelayu/Desktop/Calculator
+
+c) move path.js to desktop
+
+d) b) terminal : node path.js
+	// returns  /Usersangelayu/Desktop

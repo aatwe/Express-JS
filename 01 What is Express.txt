@@ -1,0 +1,10 @@
+NodeJS module
+Just like JQuery shortened Javscript (extra features)
+
+
+Express shortens Node(extra features)
+
+
+What was Atom built on? -> Electron -> Node
+
+

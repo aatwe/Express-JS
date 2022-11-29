@@ -1,0 +1,11 @@
+creating and ending server again and again is frustrating
+
+
+nodemon : //install using npm
+	   auto restart server when change in code
+	   keeps same port
+
+
+Install: npm install -g nodemon
+	//start nodemon monitoring for changes
+	nodemon server.js

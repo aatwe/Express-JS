@@ -1,0 +1,74 @@
+How google server responds?
+	we make a request by visiting www.google.com
+		What request? get request
+	google  server responds by sending html,css,js files
+	
+	Why we didnt receive info? our server didnt send anything to browser
+
+How to send browser information from our server to browser? .get()
+
+Server.js
+//jshint esversion:6
+			const express = require('express');	
+	//bind express function to app constant 
+			const app = express()
+
+		//where is request made  //what to do form server end on request
+		//location of get request  //calbackfunction(request , response)
+			app.get("/", function(request, response){
+			console.log(request);
+})
+	//Listen to app on port 3000		//What is port? channel
+			app.listen(3000)		//Our first server is built
+
+
+//Terminal Implement
+node server.js
+//See all request info in console
+
+
+Why still on response on browser? we didnt provide any response
+How to send response? .send() method
+
+Server.js
+//jshint esversion:6
+			const express = require('express');	
+	//bind express function to app constant 
+			const app = express()
+
+		//where is request made  //what to do form server end on request
+		             //location of get request  //calbackfunction(request , response)
+			app.get("/", function(request, response){		//can use any variable name? yes
+			respond.send("Hello");
+			respond.send("<h1>Hello World</h1>");
+			console.log(request);
+})
+	//Listen to app on port 3000		//What is port? channel
+			app.listen(3000)		//Our first server is built
+
+//Browser implement
+Hello
+WE SUCCESSFULLY SENT CODE FROM PC FILE TO BROWSER
+
+Q) how request finds server? By specifying locaiton of request
+Q) How app.listen works?
+	1) create server object
+	2) config to receive TCP connection on a specific port & IP
+	3) once connection formed : client sends http request -> server can receive http request
+
+Another short form
+
+			app.get("/", function(req, res){		//can use any variable name? yes
+			respond.send("Hello");
+			respond.send("<h1>Hello World</h1>");
+			console.log(request);
+})
+
+CHECK DOCUMENTATION for more
+'API References for express.js for RESPONSE
+How to send info to browser from server? res.send()
+How to send entire files to browser from server? res.sendFile('location_of_file_to_be_sent)
+
+Is this single page website? yes on server
+How to create multi page website on server? Forms
+
